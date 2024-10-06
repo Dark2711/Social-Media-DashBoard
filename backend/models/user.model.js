@@ -27,6 +27,9 @@ const userSchema = new mongoose.Schema({
     minlength: 5,
     maxlength: 1024,
   },
+  twitterId: { type: String }, // Optional: To store Twitter ID
+  twitterToken: { type: String }, // Optional: To store Twitter access token
+  twitterTokenSecret: { type: String }, // Optional: To store Twitter token secret
 });
 
 const User = mongoose.model('User', userSchema);

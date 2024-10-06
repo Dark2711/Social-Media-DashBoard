@@ -1,11 +1,14 @@
 const express = require('express');
-const mongoose = require('mongoose');
+
+require('dotenv').config();
+
 const connectDB = require('./db');
 const mainRouter = require('./routes/main.route');
 connectDB();
 
 const app = express();
 app.use(express.json());
+
 app.use('/api/v1', mainRouter);
 
 app.listen(3000, () => {
